@@ -1,0 +1,100 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+
+[project]
+name = "pmedm_legacy"
+dynamic = ["version"]
+authors = [
+    {name = "Jospeh V. Tuccillo", email = "tuccillojv@ornl.gov"},
+    {name = "James D. Gaboardi", email = "gaboardijd@ornl.gov"},
+]
+maintainers = [
+    {name = "Jospeh V. Tuccillo"},
+    {name = "James D. Gaboardi"},
+]
+#license = {text = ""}
+description = "Python-R Bridge to PMEDMrcpp."
+readme = "README.md"
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "pip",
+    "rpy2>=3.5.10",
+    "r-base",
+    "r-rcpp",
+    "r-rcppeigen",
+    "r-matrix",
+    "r-remotes",
+    "r-irkernel",
+    "scipy>=1.12",
+]
+
+[project.urls]
+Home = "https://code.ornl.gov/likeness"
+Repository = "https://code.ornl.gov/likeness/pmedm_legacy"
+
+[project.optional-dependencies]
+notebooks_ssh_deps = [
+    "livelike @ git+ssh://git@code.ornl.gov/likeness/livelike.git@main",
+    "likeness_vitals @ git+ssh://git@code.ornl.gov/likeness/likeness-vitals.git@main",
+    "pronto_gatto @ git+ssh://git@code.ornl.gov/likeness/pronto_gatto.git@main",
+]
+tests = [
+    "pre-commit",
+    "pyarrow",
+    "pytest",
+    "pytest-cov",
+    "pytest-xdist",
+    "ruff",
+    "setuptools_scm",
+    "watermark",
+]
+all = ["pmedm_legacy[notebooks_ssh_deps,tests]"]
+
+
+[tool.setuptools.packages.find]
+include = [
+    "pmedm_legacy",
+    "pmedm_legacy.*",
+]
+
+[tool.coverage.run]
+omit = ["pmedm_legacy/tests/*"]
+source = ["pmedm_legacy"]
+
+[tool.coverage.report]
+exclude_lines = ["except ImportError"]
+ignore_errors = true
+omit = ["pmedm_legacy/tests/*"]
+
+[tool.ruff]
+line-length = 88
+lint.select = ["E", "F", "W", "I", "UP", "N", "B", "A", "C4", "SIM", "ARG"]
+include = [
+    "*.py",
+    "**/pyproject.toml",
+    "*.ipynb",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"*__init__.py" = ["F401"] # unused-import
+"*.ipynb" = [
+    "B015", # UselessComparison
+    "B018", # UselessExpression
+    "E402", # ModuleImportNotAtTopOfFile
+    "E703", # Statement ends with an unnecessary semicolon
+]
