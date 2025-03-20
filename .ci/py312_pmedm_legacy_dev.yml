@@ -1,0 +1,39 @@
+#########################################################################
+# Install all versions from ** conda through micromamba where possible **
+#########################################################################
+
+name: py312_pmedm_legacy_dev
+channels:
+  - conda-forge
+  - r
+dependencies:
+  - python=3.12
+  # testing & development
+  - git
+  - pip
+  - pre-commit
+  - pyarrow
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+  - pytest
+  - ruff
+  - setuptools_scm
+  - watermark
+  # r packages -- not including `jovtc/pmedmrcpp`, `pmedmrcpp-pal`
+  - rpy2
+  - r-base
+  - r-rcpp
+  - r-rcppeigen
+  - r-matrix
+  - r-remotes
+  - r-irkernel
+  - pip
+  - pip:
+    # nightly build versions
+    - --pre \
+      --extra-index https://pypi.anaconda.org/scipy-wheels-nightly/simple \
+      --extra-index-url https://pypi.org/simple
+    - numpy
+    - pandas
+    - scipy

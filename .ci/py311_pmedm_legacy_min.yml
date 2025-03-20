@@ -1,0 +1,34 @@
+#########################################################################
+# Install all versions from ** conda through micromamba where possible **
+#########################################################################
+
+name: py311_pmedm_legacy_min
+channels:
+  - conda-forge
+  - r
+dependencies:
+  - python=3.11
+  # core dependencies -- not including `livelike`
+  - numpy=1.26
+  - pandas=2.2
+  - scipy=1.12
+  # testing & development
+  - git
+  - pip
+  - pre-commit
+  - pyarrow
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+  - pytest
+  - ruff
+  - setuptools_scm
+  - watermark
+  # r packages -- not including `jovtc/pmedmrcpp`, `pmedmrcpp-pal`
+  - rpy2=3.5.10
+  - r-base
+  - r-rcpp
+  - r-rcppeigen
+  - r-matrix
+  - r-remotes
+  - r-irkernel
