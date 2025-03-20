@@ -1,4 +1,5 @@
 temp/*
+notebooks/livelike_acs_cache/*
 
 *.swp
 *.pyc
