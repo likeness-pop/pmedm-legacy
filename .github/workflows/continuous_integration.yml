@@ -54,9 +54,6 @@ jobs:
       - name: requirements from R via source # see org-level Actions -> Variables
         run: |
           ${{ vars.R_REQS }}
-        #run: |
-        #  R --silent -e "remotes::install_bitbucket('jovtc/pmedmrcpp')"
-        #  R --silent -e "remotes::install_git('https://github.com/likeness-pop/pmedmrcpp-pal.git@develop')"
       
       - name: install package
         run: "pip install -e . --no-deps"
