@@ -56,7 +56,7 @@ jobs:
         #  eval "$R_REQS"
         run: |
           R --silent -e "remotes::install_bitbucket('jovtc/pmedmrcpp')"
-          R --silent -e "remotes::install_git('https://github.com/likeness/pmedmrcpp-pal.git@develop')"
+          R --silent -e "remotes::install_git('https://github.com/likeness-pop/pmedmrcpp-pal.git@develop')"
       
       - name: install package
         run: "pip install -e . --no-deps"
