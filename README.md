@@ -1,9 +1,9 @@
 # Python-R Bridge to [PMEDMrcpp](https://bitbucket.org/jovtc/pmedmrcpp/src/master/)
 
-[![pipeline status](https://code.ornl.gov/likeness/pmedm_legacy/badges/develop/pipeline.svg?job=karma&key_text=pipeline:+develop&key_width=110)](https://code.ornl.gov/likeness/pmedm_legacy/-/commits/develop)
-[![pipeline status](https://code.ornl.gov/likeness/pmedm_legacy/badges/main/pipeline.svg?job=karma&key_text=pipeline:+main&key_width=110)](https://code.ornl.gov/likeness/pmedm_legacy/-/commits/main)
-[![coverage report](https://code.ornl.gov/likeness/pmedm_legacy/badges/develop/coverage.svg)](https://code.ornl.gov/likeness/pmedm_legacy/-/commits/develop)
-[![Latest Release](https://code.ornl.gov/likeness/pmedm_legacy/-/badges/release.svg)](https://code.ornl.gov/likeness/pmedm_legacy/-/releases)
+![tag](https://img.shields.io/github/v/release/likeness-pop/pmedm_legacy?include_prereleases&sort=semver)
+[![Continuous Integration](https://github.com/likeness-pop/pmedm_legacy/actions/workflows/continuous_integration.yml/badge.svg)](https://github.com/likeness-pop/pmedm_legacy/actions/workflows/continuous_integration.yml)
+[![codecov](https://codecov.io/gh/likeness-pop/pmedm_legacy/branch/develop/graph/badge.svg)](https://codecov.io/gh/likeness-pop/pmedm_legacy)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 ## OS Compatibility
 
