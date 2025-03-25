@@ -51,7 +51,7 @@ jobs:
           environment-file: .ci/${{ matrix.environment-file }}.yaml
           micromamba-version: "latest"
 
-      - names: requirements from R via source # see org-level Actions -> Variables
+      - name: requirements from R via source # see org-level Actions -> Variables
         run: eval "$R_REQS"
       
       - name: install package
