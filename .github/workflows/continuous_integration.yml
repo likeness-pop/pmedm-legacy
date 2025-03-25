@@ -31,7 +31,7 @@ jobs:
           py312_pmedm_legacy_dev,
         ]
         include:
-          - environment-file: py312_likeness_vitals_latest
+          - environment-file: py312_pmedm_legacy_latest
             os: macos-latest  # Apple Silicon
       fail-fast: false
 
@@ -52,7 +52,8 @@ jobs:
           micromamba-version: "latest"
 
       - name: requirements from R via source # see org-level Actions -> Variables
-        run: eval "$R_REQS"
+        run: |
+          eval "$R_REQS"
       
       - name: install package
         run: "pip install -e . --no-deps"
