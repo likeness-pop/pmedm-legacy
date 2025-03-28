@@ -48,10 +48,6 @@ Home = "https://github.com/likeness-pop"
 Repository = "https://github.com/likeness-pop/pmedm-legacy"
 
 [project.optional-dependencies]
-notebooks_deps = [
-    "livelike @ git+https://github.com/likeness-pop/livelike.git@develop",
-    "likeness_vitals @ git+https://github.com/likeness-pop/likeness-vitals.git@develop",
-]
 tests = [
     "pre-commit",
     "pyarrow",
@@ -62,8 +58,14 @@ tests = [
     "setuptools_scm",
     "watermark",
 ]
-all = ["pmedm_legacy[notebooks_deps,tests]"]
-
+notebooks = [
+    "ipywidgets",
+    "jupyterlab",
+    # External Ecosystem
+    "livelike @ git+https://github.com/likeness-pop/livelike.git@develop",
+    "likeness_vitals @ git+https://github.com/likeness-pop/likeness-vitals.git@develop",
+]
+all = ["pmedm_legacy[tests,notebooks]"]
 
 [tool.setuptools.packages.find]
 include = [
