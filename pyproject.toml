@@ -44,15 +44,10 @@ dependencies = [
 ]
 
 [project.urls]
-Home = "https://code.ornl.gov/likeness"
-Repository = "https://code.ornl.gov/likeness/pmedm_legacy"
+Home = "https://github.com/likeness-pop"
+Repository = "https://github.com/likeness-pop/pmedm-legacy"
 
 [project.optional-dependencies]
-notebooks_ssh_deps = [
-    "livelike @ git+ssh://git@code.ornl.gov/likeness/livelike.git@main",
-    "likeness_vitals @ git+ssh://git@code.ornl.gov/likeness/likeness-vitals.git@main",
-    "pronto_gatto @ git+ssh://git@code.ornl.gov/likeness/pronto_gatto.git@main",
-]
 tests = [
     "pre-commit",
     "pyarrow",
@@ -63,8 +58,14 @@ tests = [
     "setuptools_scm",
     "watermark",
 ]
-all = ["pmedm_legacy[notebooks_ssh_deps,tests]"]
-
+notebooks = [
+    "ipywidgets",
+    "jupyterlab",
+    # External Ecosystem
+    "livelike @ git+https://github.com/likeness-pop/livelike.git@develop",
+    "likeness_vitals @ git+https://github.com/likeness-pop/likeness-vitals.git@develop",
+]
+all = ["pmedm_legacy[tests,notebooks]"]
 
 [tool.setuptools.packages.find]
 include = [
